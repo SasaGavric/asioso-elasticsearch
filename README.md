@@ -12,6 +12,8 @@ This sample application demonstrates:
 ## Libraries used
 - Spring Boot
 - Spring Data Elastic Search
+- Thymeleaf
+- Lombok
 
 
 
