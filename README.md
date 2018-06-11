@@ -33,3 +33,7 @@ This sample application demonstrates:
    
 6. Open your web browser and visit [`http://localhost:8080].
 
+
+###Additional
+- Ignore java.lang.ClassNotFoundException: com.sun.jna.Native (Spring Boot problem)
+
