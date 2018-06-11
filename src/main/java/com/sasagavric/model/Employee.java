@@ -2,8 +2,8 @@ package com.sasagavric.model;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "users", type="users", shards =1)
-public class User {
+@Document(indexName = "employees", type="employees", shards =1)
+public class Employee {
 	
 	private Long id;
 	private String firstName;
@@ -11,11 +11,11 @@ public class User {
 	private String department;
 	private Double salary;
 	
-	public User() {
+	public Employee() {
 		
 	}
 
-	public User(Long id, String firstName, String lastName, String department, Double salary) {
+	public Employee(Long id, String firstName, String lastName, String department, Double salary) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;

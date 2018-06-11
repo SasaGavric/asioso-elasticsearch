@@ -7,28 +7,28 @@ import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sasagavric.model.User;
-import com.sasagavric.repository.UserRepository;
+import com.sasagavric.model.Employee;
+import com.sasagavric.repository.EmployeeRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class UserServiceImpl implements UserService{
+public class EmployeeServiceImpl implements EmployeeService{
 	
 	@Autowired
-	UserRepository usersRepository;
+	EmployeeRepository usersRepository;
 
 	@Override
-	public List<User> performSearchOperation(String searchData) {
+	public List<Employee> performSearchOperation(String searchData) {
 		
 		MultiMatchQueryBuilder mmqb = QueryBuilders.multiMatchQuery(searchData, "_all").minimumShouldMatch("2");
 				
 		log.info("Start searching");
-		Iterable<User> users= usersRepository.search(mmqb);
+		Iterable<Employee> users= usersRepository.search(mmqb);
 		log.info("Searching completed");
 		
-		List<User> usersList = new ArrayList<>();
+		List<Employee> usersList = new ArrayList<>();
 		users.forEach(usersList::add);
 		
 		return usersList;

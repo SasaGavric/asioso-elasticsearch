@@ -47,7 +47,7 @@
 	
 	
 	<div class="container">
-	<h1>User Table</h1>
+	<h1>Employee Table</h1>
 	<div class="row col-md-7 table-responsive">
 		<table id="customerTable" class="table">
 			<thead>
@@ -60,13 +60,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				 <tr th:each="user, rowStat: ${listOfUsers}"
-				 	 th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
-			        <td th:text="${user.id}">1</td>
-					<td th:text="${user.firstName}">Jack</td>
-			        <td th:text="${user.lastName}">Jones</td>
-			        <td th:text="${user.department}">Finance</td>
-			        <td th:text="${user.salary}">2500.00</td>
+				 <tr th:each="employee, rowStat: ${listOfEmployees}"
+				 	 th:style="${rowStat.odd} ? 'color: white' : 'color: white;'">
+			        <td th:text="${employee.id}">1</td>
+					<td th:text="${employee.firstName}">Jack</td>
+			        <td th:text="${employee.lastName}">Jones</td>
+			        <td th:text="${employee.department}">Finance</td>
+			        <td th:text="${'$' + ' ' +  employee.salary}">2500.00</td>
 			    </tr>
 			</tbody>
 		</table>
