@@ -2,17 +2,21 @@ package com.sasagavric.model;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "employees", type="employees", shards =1)
+/**
+ * @author Sasa Gavric
+ *
+ */
+@Document(indexName = "employees", type = "employees", shards = 1)
 public class Employee {
-	
+
 	private Long id;
 	private String firstName;
 	private String lastName;
 	private String department;
 	private Double salary;
-	
+
 	public Employee() {
-		
+
 	}
 
 	public Employee(Long id, String firstName, String lastName, String department, Double salary) {
@@ -62,9 +66,5 @@ public class Employee {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
-
-	
-	
-	
 
 }
